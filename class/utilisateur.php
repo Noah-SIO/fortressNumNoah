@@ -47,25 +47,23 @@ class ManagerUtilisateur {
     }
 
     public function connexion($mdp,$login){
-        $result = $this->bd->prepare("SELECT COUNT(*) as Nb FROM user WHERE login = :login AND mdp =:mdp");
-        $result ->bindParam(':login',$login);
-        $result ->bindParam(':mdp',$mdp);
-        $result->execute();
-        $total = $result->fetch(PDO::FETCH_ASSOC);
-        if($total['Nb'] != 0){
             //echo"test";
-            $requeteid = $this -> bd -> prepare("SELECT * FROM user WHERE login = :login AND mdp = :mdp");
-            $requeteid ->bindParam(':login',$login);
-            $requeteid ->bindParam(':mdp',$mdp);
-            $requeteid ->execute();
+            $sqlid = "SELECT * FROM user WHERE login = '$login' AND mdp = '$mdp'";
+            //echo $sqlid;
+            $requeteid = $this -> bd -> query ($sqlid);
+            //$requeteid ->execute();
             $donneesid= $requeteid->fetch(PDO::FETCH_ASSOC); 
-            $tableauSearchByID= array();      
+            $tableauSearchByID= array();
+            if($donneesid != NULL){      
                 $tableauSearchByID[]= new Utilisateur($donneesid['id'],$donneesid['login'],$donneesid['mdp']);
             //var_dump($tableauSearchByID);
-            return $tableauSearchByID;
-        }
-        else{
-            return $total['Nb'];
+            return $tableauSearchByID; 
+            }
+            else{
+                return 1;
+            }
+        
         }
     }
-}
+
+
