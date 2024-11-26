@@ -49,7 +49,7 @@ class ManagerUtilisateur {
     public function connexion($mdp,$login){
             //echo"test";
             $sqlid = "SELECT * FROM user WHERE login = '$login' AND mdp = '$mdp'";
-            echo $sqlid;
+            //echo $sqlid;
             $requeteid = $this -> bd -> query ($sqlid);
             //$requeteid ->execute();
             $donneesid= $requeteid->fetch(PDO::FETCH_ASSOC); 

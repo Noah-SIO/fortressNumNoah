@@ -1,7 +1,7 @@
 <?php 
 $test = new ManagerUtilisateur();
 echo "<h2>Énigme N°1 :</h2><br>";
-echo"<p>Récuperer le code de ce coffre pour pouvoir pousuivre l'IA<p><p>utiliser comme login  '' utilisateur1 '' sa peut vous aider</p><br>";
+echo"<p>Récuperer le code de ce coffre pour pouvoir pousuivre l'IA<p><p>trouvez le login et le mot de passe</p><br>";
 
 //formulaire
 
