@@ -10,9 +10,11 @@ echo "<textarea id='message' name='message' rows='5' cols='33' placeholder='Entr
 echo "<input type='submit' value='Envoyé'>";
 echo "</form>";
 
-$code = "code=FK2FN2";
-
 if(isset($_POST['message'])){
-    echo"<p>votre message : </p>" . $_POST['message'];
-    echo"<p>À bien été envoyé</p>";
+    if (strpos($_POST['message'], '<script>') !== false){
+        echo "<script>alert('code = FN2FK2')</script>";
+    }else{
+        echo"<p>votre message : </p>" . $_POST['message'];
+        echo"<p>À bien été envoyé</p>";
+    }
 }
