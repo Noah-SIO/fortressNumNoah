@@ -49,7 +49,7 @@ class ManagerUtilisateur {
     public function connexion($mdp,$login){
             //echo"test";
             $sqlid = "SELECT * FROM user WHERE login = '$login' AND mdp = '$mdp'";
-            //echo $sqlid;
+            echo $sqlid;
             $requeteid = $this -> bd -> query ($sqlid);
             //$requeteid ->execute();
             $donneesid= $requeteid->fetch(PDO::FETCH_ASSOC); 
@@ -64,6 +64,13 @@ class ManagerUtilisateur {
             }
         
         }
+        function chiffrer($motDePasse, $cle) {
+            return base64_encode(openssl_encrypt($motDePasse, 'AES-256-ECB', $cle, 0)); // Pas d'IV en mode ECB
+        }
+        
+            function dechiffrer($motDePasseChiffre, $cle) {
+                return openssl_decrypt(base64_decode($motDePasseChiffre), 'AES-256-ECB', $cle, 0); // Pas d'IV
+            }    
     }
 
 
