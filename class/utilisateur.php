@@ -68,8 +68,9 @@ class ManagerUtilisateur {
             return base64_encode(openssl_encrypt($motDePasse, 'AES-256-ECB', $cle, 0)); // Pas d'IV en mode ECB
         }
         
-            function dechiffrer($motDePasseChiffre, $cle) {
-                return openssl_decrypt(base64_decode($motDePasseChiffre), 'AES-256-ECB', $cle, 0); // Pas d'IV
+            function dechiffrer($motDePasseChiffre, $cle, $type) {
+                $typedechi = ''.$type.'-256-ECB'; 
+                return openssl_decrypt(base64_decode($motDePasseChiffre), $typedechi, $cle, 0); // Pas d'IV
             }    
     }
 
