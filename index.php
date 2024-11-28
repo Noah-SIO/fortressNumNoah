@@ -13,6 +13,9 @@ if(isset($_GET['code'])){
     if($_GET['code'] == "B16BF20C"){
         require_once("view/def4.php");
     }
+    if($_GET['code'] != "B16BF20C" && $_GET['code'] != "FN2FK2" && $_GET['code'] != "4AGERB26"){
+        require_once("view/false.php");
+    }
 }
 else{
     require_once("view/accueil.php");
