@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="style.css">
 <?php
 
 require_once("class/utilisateur.php");
@@ -8,6 +9,9 @@ if(isset($_GET['code'])){
     }
     if($_GET['code'] == "FN2FK2"){
         require_once("view/def3.php");
+    }
+    if($_GET['code'] == "B16BF20C"){
+        require_once("view/def4.php");
     }
 }
 else{
