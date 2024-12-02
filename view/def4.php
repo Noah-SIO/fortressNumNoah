@@ -5,18 +5,50 @@ echo "<p>Expliquer comment corriger ce code afin d'arrêter les malveillances de
 
 
 echo"<form method='post'>";
-echo "<p>Problème N°1 : </p>";
+echo"<fieldset style='background-color:#8ace00;'>";
+echo "<h2 style='color:black;'>Problème N°1 : </h2>";
 echo "<img src='img/code1.png' alt='Code 1' /></br></br>";
-echo"<label for='rep1'>Votre Réponse : </label></br>";
-echo "<select name='rep1' id='rep1'>";
+echo"<label for='rep1' style='color:black;'>Votre Réponse : </label></br>";
+
+
+echo "<select name='reponse' id='reponse'>";
 echo"<option value=''>--Sélectionne ta Réponse--</option>";
 echo"<option value='Hash'>Hasher les données</option>";
 echo"<option value='base'>Modifier la base</option>";
 echo"<option value='prepare'>Faire des requêtes preparer</option>";
 echo"<option value='js'>Ajouter du javascript</option>";
 echo"</select>";
-echo "<p>Problème N°2 : </p>";
+echo"</fieldset></br>";
+
+echo"<fieldset style='background-color:lightblue;'>";
+echo "<h2 style='color:black;'>Problème N°2 : </h2>";
 echo "<img src='img/code2.png' alt='Code 2' /></br></br>";
-echo"<label for='rep1'>Votre Réponse : </label></br>";
-echo "<input type='checkbox' id='' name='' />"; //mettre 3/4 checkbox regex, echappée entrée utilisateurs htmlspecialchars
+echo"<label for='rep1' style='color:black;'>Votre Réponse : </label></br></br>";
+echo"<label for='echap' style='color:black;'>Échapée les données </label>";
+echo "<input type='checkbox' id='echap' name='echap' /></br>";
+echo"<label for='regex' style='color:black;'>Utilisé des expression régulière(REGEX) </label>";
+echo "<input type='checkbox' id='regex' name='regex' /></br>";
+echo"<label for='prepare2' style='color:black;'>Faire des requête preparer </label>";
+echo "<input type='checkbox' id='prepare2' name='prepare2' /></br>";
+echo"<label for='hash' style='color:black;'>Hasher les données </label>";
+echo "<input type='checkbox' id='hash' name='hash' /></br></br>";
+echo"</fieldset>";
+
+
+echo"</br><fieldset style='background-color:#9683ec;'>";
+echo "<h2 style='color:black;'>Problème N°3 : </h2>";
+echo "<img src='img/code3.png' alt='Code 2' /></br></br>";
+echo"</fieldset>";
+
+
+echo "</br></br><input type='submit' value='Envoyé'>";
 echo"</form>";
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    if($_POST['reponse'] == 'prepare' && isset($_POST['regex']) && isset($_POST['echap'])){
+    echo"<script>alert('coucou')</script>"; //test en cours recupération $_post et ajout 3ème problème 
+
+} else{
+    echo"<script>alert('Mauvaise réponse')</script>";
+}
+}
