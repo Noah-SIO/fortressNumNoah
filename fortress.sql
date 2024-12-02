@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 26 nov. 2024 à 14:01
+-- Généré le : lun. 02 déc. 2024 à 10:35
 -- Version du serveur : 8.3.0
 -- Version de PHP : 8.2.18
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `login`, `mdp`) VALUES
-(1, 'utilisateur1', 'code=4AGERB26'),
+(1, 'user', 'code=4AGERB26'),
 (2, 'utilisateur2', 'azerty'),
 (3, 'utilisateur3', '786453218645312');
 COMMIT;
