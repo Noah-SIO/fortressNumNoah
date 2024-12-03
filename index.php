@@ -39,5 +39,6 @@ if(isset($_GET['code'])){
 else{
     require_once("view/accueil.php");
     require_once("view/expli.php");
+    require_once("view/indice.php");
     require_once("view/def1.php"); 
 }
