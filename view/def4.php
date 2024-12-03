@@ -38,6 +38,17 @@ echo"</fieldset>";
 echo"</br><fieldset style='background-color:#9683ec;'>";
 echo "<h2 style='color:black;'>Problème N°3 : </h2>";
 echo "<img src='img/code3.png' alt='Code 2' /></br></br>";
+echo"<p style='color:black;'>Cocher les types de chiffrage existants</p>";
+echo"<label for='aes' style='color:black;'>1. AES </label>";
+echo "<input type='checkbox' id='aes' name='aes' /></br>";
+echo"<label for='des' style='color:black;'>2. DES </label>";
+echo "<input type='checkbox' id='des' name='des' /></br>";
+echo"<label for='sf' style='color:black;'>3. SF  </label>";
+echo "<input type='checkbox' id='sf' name='sf' /></br>";
+echo"<label for='rsa' style='color:black;'>4. RSA </label>";
+echo "<input type='checkbox' id='rsa' name='rsa' /></br>";
+echo"<label for='ggst' style='color:black;'>5. GGST </label>";
+echo "<input type='checkbox' id='ggst' name='ggst' /></br>";
 echo"</fieldset>";
 
 
@@ -45,10 +56,10 @@ echo "</br></br><input type='submit' value='Envoyé'>";
 echo"</form>";
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    if($_POST['reponse'] == 'prepare' && isset($_POST['regex']) && isset($_POST['echap'])){
-    echo"<script>alert('coucou')</script>"; //test en cours recupération $_post et ajout 3ème problème 
+    if($_POST['reponse'] == 'prepare' && isset($_POST['regex']) && isset($_POST['echap']) && isset($_POST['aes']) && isset($_POST['rsa']) && isset($_POST['des'])){
+    echo"<script>alert('code=4U-GSEFA20')</script>"; //test en cours recupération $_post et ajout 3ème problème 
 
 } else{
-    echo"<script>alert('Mauvaise réponse')</script>";
+    echo"<script>alert('code=B18C12JZ')</script>";
 }
 }
