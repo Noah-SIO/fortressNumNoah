@@ -55,7 +55,7 @@ echo"</fieldset>";
 echo "</br></br><input type='submit' value='Envoyé'>";
 echo"</form>";
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['reponse'])){
     if($_POST['reponse'] == 'prepare' && isset($_POST['regex']) && isset($_POST['echap']) && isset($_POST['aes']) && isset($_POST['rsa']) && isset($_POST['des'])){
     echo"<script>alert('code=4U-GSEFA20')</script>"; //test en cours recupération $_post et ajout 3ème problème 
 
