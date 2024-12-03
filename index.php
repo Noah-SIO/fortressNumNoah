@@ -3,6 +3,13 @@
 
 require_once("class/utilisateur.php");
 
+if(isset($_GET['noah'])){
+    if($_GET['noah'] == 'chiffrer'){
+        require_once('view/chiffrer.php');
+    }
+}
+
+
 if(isset($_GET['code'])){
     if($_GET['code'] == "4AGERB26"){
         require_once("view/expli.php");
