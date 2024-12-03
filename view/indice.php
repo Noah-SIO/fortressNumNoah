@@ -13,5 +13,7 @@ if($_GET['code'] == 'FN2FK2'){
 if($_GET['code'] == 'B16BF20C'){
     echo"<strong><p style='color:powderblue'>Utilise tes cours et google(recherche internet autoriser)</p></strong>";
 }
-
+else{
+    echo"<strong><p style='color:powderblue'>Faille XSS</p></strong>";
+}
 }
