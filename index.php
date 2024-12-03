@@ -16,8 +16,14 @@ if(isset($_GET['code'])){
         require_once("view/expli.php");
         require_once("view/def4.php");
     }
-    if($_GET['code'] != "B16BF20C" && $_GET['code'] != "FN2FK2" && $_GET['code'] != "4AGERB26"){
+    if($_GET['code'] != "B16BF20C" && $_GET['code'] != "FN2FK2" && $_GET['code'] != "4AGERB26" && $_GET['code'] != "4U-GSEFA20" && $_GET['code'] != 'B18C12JZ'){
         require_once("view/false.php");
+    }
+    if($_GET['code'] == '4U-GSEFA20'){
+        require_once("view/win.php");
+    }
+    if($_GET['code'] == 'B18C12JZ'){
+        require_once("view/lose.php");
     }
 }
 else{
