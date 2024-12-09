@@ -14,7 +14,7 @@ echo"<form method='post'>";
         echo"<input type='password' id='mdp' name='mdp'>";
         echo"<br>";
         echo"<input type='submit' value='Connexion'>";
-echo"</form>";
+echo"</form></br>";
                                                 ////////solution utilisateur1';--
 
 if(isset($_POST['login'])&isset($_POST['mdp'])){

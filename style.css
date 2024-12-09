@@ -1,26 +1,107 @@
+/* Style global pour le body */
 body {
-    background-color: grey;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 20px;
-  }
+  background-color: #0d1117; /* Fond sombre type terminal */
+  color: #c9d1d9; /* Texte gris clair pour une bonne lisibilité */
+  font-family: 'Courier New', monospace; /* Police style code */
+  text-align: center;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* Conteneur principal pour le formulaire */
+form {
+  margin-top: 50px;
+  background-color: #161b22; /* Fond plus sombre pour contraster avec le texte */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 255, 127, 0.4); /* Ombre néon verte */
+  display: inline-block;
+  max-width: 100%; /* Le formulaire peut prendre toute la largeur du contenu */
+  width: auto; /* Ajustement automatique en fonction de son contenu */
+  box-sizing: border-box;
+  text-align: center; /* Aligner le texte à gauche pour plus de lisibilité */
+}
+
+/* Titres */
+form h2 {
+  color: #00ff7f; /* Vert néon pour les titres */
+  text-shadow: 0 0 10px #00ff7f; /* Effet lumineux */
+  margin-bottom: 20px;
+}
+
+/* Champ d'entrée */
+input {
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #333; /* Bord gris foncé */
+  background-color: #0d1117; /* Fond sombre type terminal */
+  color: #00ff7f; /* Texte vert néon */
+  width: 100%; /* Champ prend toute la largeur du conteneur */
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Champ en focus */
+input:focus {
+  border-color: #00aaff; /* Bleu électrique au focus */
+  outline: none;
+  box-shadow: 0 0 8px #00aaff; /* Effet lumineux */
+}
+
+/* Bouton */
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  background-color: #00aaff; /* Bleu électrique */
+  color: #0d1117; /* Texte sombre pour contraster */
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 100%; /* Le bouton prend toute la largeur */
+  max-width: 300px; /* Limite la largeur maximale du bouton */
+  margin: 10px 0;
+}
+
+/* Effet hover pour le bouton */
+button:hover {
+  background-color: #00ff7f; /* Change en vert néon au survol */
+  box-shadow: 0 0 10px #00ff7f; /* Lumière verte au survol */
+}
+
+/* Effet actif pour le bouton */
+button:active {
+  background-color: #0077cc; /* Bleu foncé quand cliqué */
+  box-shadow: inset 0 0 5px #004466; /* Effet enfoncé */
+}
+
+/* Animation texte "glitch" */
+@keyframes glitch {
+  0% { text-shadow: 1px 1px 3px #00ff7f; }
+  50% { text-shadow: 2px 2px 6px #00aaff, -2px -2px 6px #ff004f; }
+  100% { text-shadow: 1px 1px 3px #00ff7f; }
+}
+
+/* Classe pour le texte glitch */
+.glitch {
+  animation: glitch 1.5s infinite;
+  color: #00ff7f; /* Couleur de base */
+  font-size: 1.2rem;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
   form {
-    margin-top: 50px;
+      width: 95%; /* Le formulaire prend 95% de la largeur de l'écran */
   }
-  input {
-    padding: 10px;
-    margin: 5px;
-    border-radius: 5px;
-    border: 1px solid #333;
-    background-color: #222;
-    color: #fff;
-  }
+  
   button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #00aaff;
-    color: #fff;
-    cursor: pointer;
+      width: 100%; /* Le bouton prend toute la largeur sur les petits écrans */
   }
+
+  input {
+      width: 100%; /* Champs d'entrée prennent toute la largeur */
+  }
+}
+
