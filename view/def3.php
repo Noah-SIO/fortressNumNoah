@@ -3,7 +3,7 @@ $alea = rand(1,3);
 $alea = strval($alea);
 $tableau = array(
     '1' => 'WWkzck5QNG80bXBsTTVpSnFZMVhhQT09',
-    '2' => 'am5NcGoxREdQTHNvTVJRejk3Tk0vZz09',
+    '2' => 'OE9vTVR2cGpKQnpXcnEvdEdvMWNnQT09',
     '3' => 'SktzbDcxc0ZwSUJ1SW5BOEg4M2d1QT09',
 );
 $tableauphrase = array(

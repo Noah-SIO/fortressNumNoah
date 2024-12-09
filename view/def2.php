@@ -12,7 +12,7 @@ echo "</form>";
 
 if(isset($_POST['message'])){
     if (strpos($_POST['message'], '<script>') !== false){
-        echo "<script>alert('code = FN2FK2')</script>";
+        echo "<script>alert('code=FN2FK2')</script>";
     }else{
         echo"<p>votre message : </p>" . $_POST['message'];
         echo"<p>À bien été envoyé</p>";

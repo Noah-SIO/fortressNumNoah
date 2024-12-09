@@ -1,9 +1,9 @@
 <?php
 echo "<form method='post'>";
-echo "<input type='submit' style='float:left;font-size:25px;' value='💡'>";
+echo"<button name='indice' style='float:left;font-size:40px; background-color:white;' value='test'>💡</button>";
 echo "</form></br>";
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if(isset($_POST['indice'])){
 if(isset($_GET['code'])){    
 if($_GET['code'] == '4AGERB26'){
     echo"<strong><p style='color:powderblue'>Utiliser du code javascript</p></strong>";
