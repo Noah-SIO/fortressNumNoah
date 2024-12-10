@@ -57,8 +57,39 @@ class ManagerPartie {
         $this->bd = new PDO("mysql:host=localhost;dbname=fortress", 'root', '', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
     }
 
-    //public function AddPartie()
+    public function AddPartie(){
+        $activerCommit = true;
+        try {
+            $result = $this->bd->getAttribute(PDO::ATTR_AUTOCOMMIT);
+            //echo "L'autocommit vaut " . $result;
+            $this->bd->setAttribute(PDO::ATTR_AUTOCOMMIT, false);
+            $this->bd->beginTransaction();
+            $result = $this->bd->getAttribute(PDO::ATTR_AUTOCOMMIT);
+            //echo "L'autocommit vaut " . $result;
+        } catch (Exception $e) {
+            echo "<p>Erreur lors de la création de partie : " . $e->getMessage() . "</p>";
+        }
 
-    
+            $sql = "INSERT INTO partie (id_joueur, date_partie, score) VALUES (:id_joueur, :date_partie, :score)";
+            $stmt = $this->bd->prepare($sql);            
+            date_default_timezone_set('Europe/Paris');
+            $date = date("Y-m-d");
+            $idplayer = $_SESSION['idplayer'];
+            $stmt->bindParam(':id_joueur', $idplayer);
+            $stmt->bindParam(':date_partie', $date);
+            $score=0; /////////////////////////////Faire des calcul temps et defi pour score
+            $stmt->bindParam(':score', $score);
+            $stmt->execute();   
 
+            $sql2 = "UPDATE joueur SET score = score + 500 WHERE id_joueur = $idplayer"; //mettre score
+            $stmt2 = $this->bd->prepare($sql2);
+            $stmt2->execute();
+
+
+            if($activerCommit){
+                $this->bd->commit();
+            }else{
+                $this->bd->rollBack();
+            }
+        }
 }

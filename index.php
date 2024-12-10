@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="style.css">
 <?php
-
+session_start();
 require_once("class/utilisateur.php");
 require_once("class/joueur.php");
 require_once("class/partie.php");
