@@ -82,4 +82,14 @@ class ManagerJoueur {
         return true;
     }
 
+    public function JoueurByPseudo($pseudo){
+        $sql = "SELECT id_joueur FROM joueur WHERE pseudo = :pseudo"; 
+        $stmt = $this->bd->prepare($sql); 
+        $stmt->bindParam(':pseudo', $pseudo); 
+        $stmt->execute(); 
+        $result = $stmt->fetch(PDO::FETCH_ASSOC); 
+        return $result['id_joueur']; 
+    }
+
+
 }

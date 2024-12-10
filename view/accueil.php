@@ -18,6 +18,8 @@ echo"</form></br></br>";
 if(isset($_POST['mail']) && isset($_POST['pseudo'])){
     $success = $joueur->AddJoueur($_POST['pseudo'], $_POST['mail']);
     if($success==true){
+        $joueur->JoueurByPseudo($_POST['pseudo']);
+        $_SESSION['idplayer']= $joueur->JoueurByPseudo($_POST['pseudo']);
         header("Location: index.php?code=def1");
     }
 }
