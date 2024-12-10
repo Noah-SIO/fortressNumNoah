@@ -58,7 +58,7 @@ class ManagerPartie {
     }
 
     public function AddPartie(){
-        $activerCommit = true;
+        $activerCommit = true; //Test mettre à FALSE bool pour Rollback
         try {
             $result = $this->bd->getAttribute(PDO::ATTR_AUTOCOMMIT);
             //echo "L'autocommit vaut " . $result;
