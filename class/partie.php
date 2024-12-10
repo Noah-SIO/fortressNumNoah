@@ -1,6 +1,6 @@
 <?php
 class Partie{
-    / Déclaration des propriétés
+    // Déclaration des propriétés
     private $id_partie;
     private $id_joueur;
     private $date_partie;
