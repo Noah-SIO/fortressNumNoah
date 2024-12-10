@@ -68,6 +68,18 @@ class ManagerJoueur {
         $this->bd = new PDO("mysql:host=localhost;dbname=fortress", 'root', '', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
     }
 
-    
+    public function AddJoueur($pseudo,$email){
+        $sql = "INSERT INTO joueur (pseudo, email, date_inscription, score) VALUES (:pseudo, :email, :date_inscription, :score)";
+        $stmt = $this->bd->prepare($sql);            
+        date_default_timezone_set('Europe/Paris');
+        $date = date("Y-m-d");
+        $stmt->bindParam(':pseudo',    $pseudo);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':date_inscription', $date);
+        $score=0;
+        $stmt->bindParam(':score', $score);
+        $stmt->execute();   
+        return true;
+    }
 
 }
