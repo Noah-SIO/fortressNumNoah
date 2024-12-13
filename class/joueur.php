@@ -8,10 +8,9 @@ private $date_inscription;
 private $score;
 
 // Constructeur pour initialiser les propriétés
-public function __construct($id_joueur, $pseudo, $email, $date_inscription, $score) {
+public function __construct($id_joueur, $pseudo, $date_inscription, $score) {
     $this->id_joueur = $id_joueur;
     $this->pseudo = $pseudo;
-    $this->email = $email;
     $this->date_inscription = $date_inscription;
     $this->score = $score;
 }
@@ -91,5 +90,19 @@ class ManagerJoueur {
         return $result['id_joueur']; 
     }
 
+    public function return3Joueur(){
+        $sql = "SELECT * FROM utilisateurs_sans_email";
+        $stmt = $this->bd->prepare($sql);
+        $stmt->execute();
+        $donneesview= $stmt->fetchall(PDO::FETCH_ASSOC); 
+        $tableauView= array();      
+        if($donneesview != NULL){
+            for ($i=0 ; $i<count($donneesview) ;$i++){
+                $tableauView[]= new Joueur($donneesview[$i]['id_joueur'],$donneesview[$i]['pseudo'],$donneesview[$i]['date_inscription'],$donneesview[$i]['score']);                
+            }
+            return $tableauView;
+        }
+    }
+    
 
 }
