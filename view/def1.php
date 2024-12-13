@@ -22,6 +22,7 @@ if(isset($_POST['login'])&isset($_POST['mdp'])){
     if($resultat != 1){
         echo "Bonjour " . $resultat[0]->getLogin() . "<br>";
         echo $resultat[0]->getMdp();
+        $_SESSION['score'] = 250;
     }
     else{
         echo"problème de connexion";

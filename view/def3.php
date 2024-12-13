@@ -42,6 +42,7 @@ echo "</form></br></br>";
 if(isset($_POST['mdpn'])){
     $code='B16BF20C';
     if($_POST['mdpn'] == "B16BF20C" || $_POST['mdpn'] == "4-B11-T/C4G63" || $_POST['mdpn'] == "AT1601ZZ-FE"){
+        $_SESSION['score'] = $_SESSION['score'] + 250; 
         echo"<script>alert('code=$code')</script>";
     }
     else{

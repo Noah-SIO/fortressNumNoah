@@ -12,6 +12,7 @@ echo "</form>";
 
 if(isset($_POST['message'])){
     if (strpos($_POST['message'], '<script>') !== false){
+        $_SESSION['score'] = $_SESSION['score'] + 250; 
         echo "<script>alert('code=FN2FK2')</script>";
     }else{
         echo"<p>votre message : </p>" . $_POST['message'];

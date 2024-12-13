@@ -57,7 +57,7 @@ class ManagerPartie {
         $this->bd = new PDO("mysql:host=localhost;dbname=fortress", 'root', '', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
     }
 
-    public function AddPartie(){
+    public function AddPartie($scoretest){
         $activerCommit = true; //Test mettre à FALSE bool pour Rollback
         try {
             $result = $this->bd->getAttribute(PDO::ATTR_AUTOCOMMIT);
@@ -77,11 +77,11 @@ class ManagerPartie {
             $idplayer = $_SESSION['idplayer'];
             $stmt->bindParam(':id_joueur', $idplayer);
             $stmt->bindParam(':date_partie', $date);
-            $score=0; /////////////////////////////Faire des calcul temps et defi pour score
+            $score=$scoretest; /////////////////////////////Faire des calcul temps et defi pour score
             $stmt->bindParam(':score', $score);
             $stmt->execute();   
 
-            $sql2 = "UPDATE joueur SET score = score + 500 WHERE id_joueur = $idplayer"; //mettre score
+            $sql2 = "UPDATE joueur SET score = score + $scoretest WHERE id_joueur = $idplayer"; //mettre score
             $stmt2 = $this->bd->prepare($sql2);
             $stmt2->execute();
 
