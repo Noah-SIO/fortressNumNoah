@@ -56,11 +56,20 @@ echo "</br></br><input type='submit' value='Envoyé'>";
 echo"</form>";
 
 if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['reponse'])){
+    if($_POST['reponse'] == 'prepare'){
+        $_SESSION['score'] = $_SESSION['score'] + 50;
+    } 
+    if(isset($_POST['regex']) && isset($_POST['echap'])){
+        $_SESSION['score'] = $_SESSION['score'] + 100;
+    }
+    if(isset($_POST['aes']) && isset($_POST['rsa']) && isset($_POST['des'])){
+        $_SESSION['score'] = $_SESSION['score'] + 100;
+    }
     if($_POST['reponse'] == 'prepare' && isset($_POST['regex']) && isset($_POST['echap']) && isset($_POST['aes']) && isset($_POST['rsa']) && isset($_POST['des'])){
-        $_SESSION['score'] = $_SESSION['score'] + 250; 
-    echo"<script>alert('code=4U-GSEFA20')</script>"; //test en cours recupération $_post et ajout 3ème problème 
-
-} else{
+        echo"<script>alert('code=4U-GSEFA20')</script>";
+    }
+    else{
     echo"<script>alert('code=B18C12JZ')</script>";
 }
 }
+
