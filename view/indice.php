@@ -15,7 +15,7 @@ if($_GET['code'] == 'B16BF20C'){
     echo"<strong><p style='color:powderblue'>Utilise tes cours et google(recherche internet autoriser)</p></strong>";
 }
 if($_GET['code'] == 'def1'){
-    echo"<strong><p style='color:powderblue'>Faille SQL</p></strong>";
+    echo"<strong><p style='color:powderblue'>Utiliser du code SQL/Faille,Injection SQL</p></strong>";
 }
 }
 }

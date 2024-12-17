@@ -15,7 +15,7 @@ echo"<form method='post'>";
         echo"<br>";
         echo"<input type='submit' value='Connexion'>";
 echo"</form></br>";
-                                                ////////solution utilisateur1';--
+                                                ////////solution user';--
 
 if(isset($_POST['login'])&isset($_POST['mdp'])){
     $resultat = $test->connexion($_POST['mdp'],$_POST['login']);
